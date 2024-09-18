@@ -9,10 +9,10 @@ from io import BytesIO
 
 from dotenv import load_dotenv, find_dotenv
 
-_ = load_dotenv('openAI.env')
+_ = load_dotenv('api_keys.env')
 client = OpenAI(
     # This is the default and can be omitted
-    api_key=os.environ.get('openAI_api_key'),
+    api_key=os.environ.get('openai_apikey'),
 )
 
 def fetch_image(url):

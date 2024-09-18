@@ -15,7 +15,7 @@ Cuando ejecute este script, debe ver en la consola el nombre de la película, la
 
 ![Fork 1](imgs/mp1a.png)
 
-Se podría crear un script para crear y modificar las imágenes de la base de datos en la carpeta ``movie/management/commands``. Por ejemplo, si se ubica el archivo [add_images_db.py](aux_files/add_images_db.py) en la carpeta mencionada y se ejecuta el comando:
+Se podría crear un script para crear y modificar las imágenes de la base de datos en la carpeta ``movie/management/commands``. Por ejemplo, si se ubica el archivo [add_images_db.py](DjangoProjectBase/movie/management/commands/add_images_db.py) en la carpeta mencionada y se ejecuta el comando:
 
 ````shell
 python manage.py add_images_db
@@ -27,7 +27,7 @@ Se estaría consultando la API de openAI de generación de imágenes para crear 
 
 Esta carpeta se debe descomprimir y las imágenes se deben copiar en el path ``media/movie/images`` del proyecto ``DjangoProjectBase``
 
-Ahora, se debe crear el archivo ``modify_image_paths_db.py`` en la carpeta ``movie/management/commands``. Con este archivo se modificará la imagen de cada película en la base de datos para que sea la ilustración generada por la API de generación de imágenes. Este archivo lo puede encontrar acá: [modify_image_paths_db.py](aux_files/modify_image_paths_db.py).
+Ahora, se debe crear el archivo ``modify_image_paths_db.py`` en la carpeta ``movie/management/commands``. Con este archivo se modificará la imagen de cada película en la base de datos para que sea la ilustración generada por la API de generación de imágenes. Este archivo lo puede encontrar acá: [modify_image_paths_db.py](DjangoProjectBase/movie/management/commands/modify_image_paths_db.py).
 
 Una vez haya copiado el archivo en la ubicación mencionada, asegúrese de que la consola esté ubicada en ``DjangoProjectBase`` y ejecute el comando:
 
