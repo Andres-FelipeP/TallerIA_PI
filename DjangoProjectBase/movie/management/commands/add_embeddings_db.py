@@ -17,7 +17,7 @@ class Command(BaseCommand):
 
         for movie in movies:
             emb = movie['embedding']
-            emb_binary = np.array(emb).tobytes()
+            emb_binary = np.array(emb, dtype=np.float32).tobytes()  # Asegúrate de que el tipo sea correcto
             item = Movie.objects.filter(title=movie['title']).first()
             item.emb = emb_binary
             item.save()

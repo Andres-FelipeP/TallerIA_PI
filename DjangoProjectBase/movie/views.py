@@ -1,25 +1,22 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 from .models import Movie
 
 import matplotlib.pyplot as plt
 import matplotlib
 import io
-import urllib, base64
-
+import base64
+from . import buscador_similarities
 
 
 def home(request):
-    #return HttpResponse('<h1>Welcome to Home Page</h1>')
-    #return render(request, 'home.html')
-    #return render(request, 'home.html', {'name':'Paola Vallejo'})
-    searchTerm = request.GET.get('searchMovie') # GET se usa para solicitar recursos de un servidor
+    searchTerm = request.GET.get('searchMovie')  # GET se usa para solicitar recursos de un servidor
     if searchTerm:
-        movies = Movie.objects.filter(title__icontains=searchTerm)
+        peliculas_similares = buscador_similarities.buscador_ia(searchTerm)
     else:
-        movies = Movie.objects.all()
-    return render(request, 'home.html', {'searchTerm':searchTerm, 'movies':movies})
+        peliculas_similares = Movie.objects.all()
+
+    return render(request, 'home.html', {'searchTerm': searchTerm, 'peliculas_similares': peliculas_similares})
 
 
 def about(request):

@@ -16,5 +16,7 @@ class Movie(models.Model):
     year = models.IntegerField(blank=True, null=True)
     emb = models.BinaryField(default=get_default_array())
 
+
+
     def __str__(self):
         return self.title
